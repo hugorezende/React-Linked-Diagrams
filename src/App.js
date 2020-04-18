@@ -14,14 +14,14 @@ function App() {
       id: 1,
       position: [10, 50],
       parameters: ["Parameter 01", "Parameter 01", "Parameter 01"],
-      linkTo: 2
+      linkTo: [2,3]
     },
 
     {
       id: 2,
-      position: [250, 50],
+      position: [250, 100],
       parameters: ["Parameter 05", "Parameter 06", "Parameter 07"],
-      linkTo: 3
+      linkTo: [3]
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ function App() {
       id: 5,
       position: [200, 150],
       parameters: ["Parameter 08", "Parameter 09", "Parameter 10"],
-      linkTo: 3
+      linkTo: []
     }
   ];
   return (

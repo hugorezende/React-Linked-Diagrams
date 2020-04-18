@@ -4,18 +4,24 @@ import Link from "./components/diagrams/Link";
 
 export default function ComponentTest(props) {
   var initLink = [];
+
   props.nodes.map(node => {
+    //Check exists link for other node
     if (node.linkTo) {
-      let copyValInit = [...node.position];
-      let copyValEnd = [
-        ...props.nodes.find(x => x.id === node.linkTo).position
-      ];
-      initLink.push({
-        id: node.id,
-        positionInit: copyValInit,
-        positionEnd: copyValEnd,
-        linkTo: node.linkTo
+      //For each link create variable
+      node.linkTo.forEach(element => {
+        let copyValInit = [...node.position];
+        let copyValEnd = [
+          ...props.nodes.find(x => x.id === element).position
+        ];
+        initLink.push({
+          id: node.id,
+          positionInit: copyValInit,
+          positionEnd: copyValEnd,
+          linkTo: element
+        });
       });
+
       //initLink.push({positionEnd:copyValEnd});
     }
   });

@@ -1,18 +1,15 @@
 import React from "react";
 
 export default function Link(props) {
+  const linkOffsetX = 10;
+  const linkOffsetY = 10;
   return (
     <path
       d={`
-            M ${props.position.positionInit[0]+150} ${props.position.positionInit[1]}
-            Q ${props.position.positionInit[0]+180}, ${props.position.positionInit[1]}
-            ${props.position.positionEnd}
+            M ${props.position.positionInit[0]+150} ${props.position.positionInit[1]+linkOffsetX}
+            C ${props.position.positionInit[0]+200},${props.position.positionInit[1]+linkOffsetX} ${props.position.positionEnd[0]-50},${props.position.positionEnd[1]+linkOffsetX}
+            ${props.position.positionEnd[0]+10} ${props.position.positionEnd[1]+linkOffsetX}
           `}
-    //   d={`
-    //   M 0 0
-    //   Q 0, 0
-    //   ${props.position.positionEnd}
-    // `}
       fill="none"
       stroke="hotpink"
       strokeWidth={1}
